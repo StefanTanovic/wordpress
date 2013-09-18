@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+
+form, #chart, #topnav li a:hover, #language, #text-box, #tabela  {
+	background-color: #06F;
+}
+.bars {
+	background-color:red;
+}
