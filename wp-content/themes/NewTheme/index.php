@@ -18,13 +18,26 @@
 
 <body <?php body_class(); ?>>
 <div id="header">
-	<h1>My site</h1>
+	<h1><?php bloginfo('name'); ?></h1>
 </div> <!--#header -->
 
 <div id="main">
-	<h2>Foo.</h2>
-    <p>Lorem ipsum dolor sit amet, ad ipsum verear accumsan mea, mucius ceteros dissentias ex sed. Option expetendis quo ex. At pro propriae voluptaria comprehensam. Quo nihil partem accommodare in, diam sanctus vix ut, etiam error audire in nam.
-Vitae tantas salutatus ea pro, mea purto honestatis interesset id. Probo aliquam feugait at eam. Rebum viris graece mea ea. Has dicam veniam nonumy ei, no graecis menandri comprehensam vis.</p>
+	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+	<h2 id="post-<?php the_ID(); ?>" class="<?php post_class(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+    <?php the_content(); ?>
+    <?php wp-link_pages(); ?>
+    <div class="comentblock">
+    	<?php comments_template(); ?>
+    </div><!--commentblock-->
+     <?php endwhile; ?>
+    <div class="navigation">
+    	<div class="alignleft"><?php posts_nav_link(); ?></div>
+        <div class="clear"><!-- --></div>
+    </div><!-- .navigation -->
+    	<?php else: ?>
+        <h2>Not Found</h2>
+        <p>The posts you were looking for could not be found.</p>
+        <?php endif; ?>
 </div> <!-- #main -->
 
 <div id="sidebar">
