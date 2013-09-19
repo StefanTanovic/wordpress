@@ -1,10 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" <?php language_atributes(); ?> >
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="description" content="A site about foo." />
-<link rel="stylesheet" href="style.css" type="text/css" />
-<title>My Site</title>
+<meta http-equiv="Content-Type" content="text/html; charset=<?php bloginfo('charset'); ?>" />
+<meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
+	<!-- leave this for stats -->
+<meta name="description" content="<?php bloginfo('description'); ?>" />
+
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
+<link rel="alternate" type="aplication/rss+xml" title="RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
+<link rel="alternate" type="aplication/atom+xml" title="Atom Feed" href="<?php bloginfo('atom_url'); ?>" />
+<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+
+<title><?php bloginfo('name'); ?><?php wp_title(); ?></title>
+
+<?php wp_head(); ?>
 </head>
 
 <body>
