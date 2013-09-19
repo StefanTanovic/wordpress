@@ -23,9 +23,11 @@
 
 <div id="main">
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+    <h3 class="date"><?php the_date(); ?></h3>
 	<h2 id="post-<?php the_ID(); ?>" class="<?php post_class(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-    <?php the_content(); ?>
+    <?php the_content("Continue reading..."); ?>
     <?php wp-link_pages(); ?>
+    <p class="postmeta">Posted on <?php the_time(get_option("date_format")); ?> at <?php the_time(); ?></p>
     <div class="comentblock">
     	<?php comments_template(); ?>
     </div><!--commentblock-->
