@@ -41,16 +41,12 @@
 </div> <!-- #main -->
 
 <div id="sidebar">
-	<ul>
-    	<li><a href="#">Page One</a></li>
-        <li><a href="#">Page Two</a></li>
-        <li><a href="#">Page Three</a></li>
-    </ul>
+<?php if ( !dynamic_sidebar('Sidebar')) : endif; ?>
 </div> <!-- #sidebar -->
 
 <div id="footer">
-	<p>&copy; 2010 My Site.</p>
+	<p>&copy; <?php echo date('Y '); bloginfo('name'); ?></p>
 </div> <!-- #footer -->
-       
+<?php wp_footer(); ?>
 </body>
 </html>
