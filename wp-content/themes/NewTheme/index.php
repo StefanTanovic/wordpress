@@ -23,6 +23,7 @@
 
 <ul><?php wp_list_pages('sort column=menu_order'); ?> </ul>
 <?php wp_page_menu(); ?>
+<ul><?php wp_list_categories(); ?> </ul>
 <div id="main">
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <h3 class="date"><?php the_date(); ?></h3>
