@@ -17,9 +17,8 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="header">
-	<h1><?php bloginfo('name'); ?></h1>
-</div> <!--#header -->
+<?php get_header(); ?>
+<!--#header -->
 
 <ul><?php wp_list_pages('sort column=menu_order'); ?> </ul>
 <?php wp_page_menu(); ?>
