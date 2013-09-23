@@ -24,6 +24,8 @@
 <?php wp_page_menu(); ?>
 <ul><?php wp_list_categories(); ?> </ul>
 <div id="main">
+	
+    <?php query_posts( 'post_type=page&orderby=menu_order&order=asc&post_parent=uncategorized&posts_per_page=-1' ); ?>
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <h3 class="date"><?php the_date(); ?></h3>
 	<h2 id="post-<?php the_ID(); ?>" class="<?php post_class(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
